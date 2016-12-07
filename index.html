@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lterm</title>
+    <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+    <!-- Insert this line above script imports  -->
+    <link href="css/materialize.min.css" rel="stylesheet">
+    <script>
+    if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }
+    </script>
+    <!-- normal script imports etc  -->
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/vendor.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>
+    if (window.module) module = window.module;
+    </script>
+</head>
+
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo"></a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#"></a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+                <li>
+                    <a href="#"></a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons"></i></a>
+        </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <h3 class="header center orange-text">The Marauder's Map</h3>
+            <div class="row center">
+                <h5 class="header col s12 light"><script>document.write(process.versions.node)</script>I solemnly swear that I am up to no good!</h5>
+            </div>
+            <div class="card-panel">
+                <div class="row center">
+                    <div class="input-field col s6">
+                        <select id="serialDropdown">
+                            <option value="" disabled selected>Port</option>
+                        </select>
+                        <label>Port</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="bdrate">
+                            <option value="" disabled >Choose Baudrate</option>
+                            <option value="9600" selected>9600</option>
+                            <option value="19200">19200</option>
+                            <option value="57600">57600</option>
+                            <option value="115200">115200</option>
+                        </select>
+                        <label>Baudrate</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="input-field col s4">
+                        <select id="parity_bit">
+                            <!-- <option value="" disabled selected>Choose your option</option> -->
+                            <option value="none" selected>none</option>
+                            <option value="odd">odd</option>
+                            <option value="even">even</option>
+                        </select>
+                        <label>Parity Bit</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <select id="data_bit">
+                            <option value="8" selected="selected">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                        </select>
+                        <label>Data Bit</label>
+                    </div>
+                    
+                    <div class="input-field col s4">
+                        <select id="stop_bit">
+                            <option value="1" selected="selected">1</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                        </select>
+                        <label for="last_name">Stop Bit</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row center">
+                <div id="open_port" class="btn-large waves-effect waves-light orange">Open Port</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section orange">
+                <div class="container">
+                    <div class="row">
+                        <div class="col m4 ">
+                            <h3 class="white-text">Interest: </h3>
+                            <h3 id="result" class="grey-text text-lighten-4"></h3>
+                        </div>
+                        <!--  -->
+                        <div class="col m4 ">
+                            <h3 class="white-text">Interest noop: </h3>
+                            <h3 id="result_plain" class="grey-text text-lighten-4"></h3>
+                        </div>
+                        <div class="col m2 ">
+                            <h5 class="white-text">Span</h5>
+                            <h4 id="span_result" class="grey-text text-lighten-4"></h4>
+                        </div>
+                        <div class="col m2 ">
+                            <h5 class="white-text">Ratio</h5>
+                            <h4 id="ratio_result" class="grey-text text-lighten-4"></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer orange white-text">
+        <div class="container">
+            <div class="row">
+                Mischief Managed!
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+// You can also require other files to run in this process
+require('./renderer.js')
+</script>
+
+</html>
